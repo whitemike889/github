@@ -8,6 +8,40 @@
     align-items: center;
     justify-content: space-between;
   }
+
+  &-nav {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    margin-bottom: @component-padding * 2;
+  }
+
+  &-navItem {
+    flex: 1 1 auto;
+    padding: @component-padding/1.5 @component-padding;
+    font-size: .9em;
+    text-align: center;
+    color: @text-color-subtle;
+    border: 1px solid;
+    border-color: transparent transparent @base-border-color transparent;
+    white-space: nowrap;
+
+    &.is-selected {
+      color: @text-color-selected;
+      font-weight: 500;
+      border-radius: @component-border-radius @component-border-radius 0 0;
+      border-color: @base-border-color @base-border-color transparent @base-border-color;
+    }
+  }
+
+  &-nav {
+    .badge {
+      font-size: .8em;
+      margin-left: @component-padding/2;
+    }
+  }
+
+
 }
 
 
@@ -26,8 +60,8 @@
 
   .issueish-badge-and-link {
     margin-bottom: @component-padding * 1.5;
-    padding-bottom: @component-padding * 1.5;
-    border-bottom: 1px solid @base-border-color;
+    // padding-bottom: @component-padding * 1.5;
+    // border-bottom: 1px solid @base-border-color;
   }
 
   .refresh-button .icon {
