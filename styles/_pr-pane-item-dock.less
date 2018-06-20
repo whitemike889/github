@@ -1,0 +1,37 @@
+@import 'variables';
+
+// Overrides when inside a dock
+
+atom-dock.left .github-PrPaneItem,
+atom-dock.right .github-PrPaneItem {
+  padding: @component-padding;
+  font-size: @font-size;
+  line-height: @component-line-height;
+  background-color: @tool-panel-background-color;
+
+  .issueish-title {
+    font-size: 1.2em;
+  }
+
+  &-row {
+    text-align: left;
+  }
+
+  &-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &-navItem {
+    text-align: left;
+    font-size: 1em;
+    color: @text-color;
+
+    &.is-selected {
+      border-color: @base-border-color;
+      border-radius: @component-border-radius;
+      background-color: @background-color-selected;
+    }
+  }
+
+}

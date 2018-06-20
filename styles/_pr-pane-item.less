@@ -2,6 +2,11 @@
 
 
 .github-PrPaneItem {
+  display: flex;
+  &-container {
+    display: flex;
+    flex-direction: column;
+  }
 
   &-row {
     display: flex;
@@ -13,24 +18,22 @@
     display: flex;
     align-items: center;
     overflow-x: auto;
-    margin-bottom: @component-padding * 2;
+    box-shadow: inset 0 -1px 0 @base-border-color;
   }
 
   &-navItem {
-    flex: 1 1 auto;
-    padding: @component-padding/1.5 @component-padding;
-    font-size: .9em;
-    text-align: center;
+    flex: 0 1 auto;
+    padding: @component-padding @component-padding*2;
+    font-size: .8em;
     color: @text-color-subtle;
-    border: 1px solid;
-    border-color: transparent transparent @base-border-color transparent;
+    border-bottom: 1px solid @base-border-color;
     white-space: nowrap;
+    cursor: default;
 
     &.is-selected {
       color: @text-color-selected;
       font-weight: 500;
-      border-radius: @component-border-radius @component-border-radius 0 0;
-      border-color: @base-border-color @base-border-color transparent @base-border-color;
+      border-color: @text-color-subtle;
     }
   }
 
@@ -41,11 +44,19 @@
     }
   }
 
+  &-subView {
+    position: relative;
+    flex: 1;
+    overflow: auto;
+    padding: @component-padding*2 0;
+  }
 
 }
 
 
 .github-PrPaneItem.github-PrPaneItem {
+  padding: @component-padding * 1.5;
+  overflow: initial;
 
   .issueish-avatar-and-title {
     border-bottom: none;
@@ -60,8 +71,6 @@
 
   .issueish-badge-and-link {
     margin-bottom: @component-padding * 1.5;
-    // padding-bottom: @component-padding * 1.5;
-    // border-bottom: 1px solid @base-border-color;
   }
 
   .refresh-button .icon {
