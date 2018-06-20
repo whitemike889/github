@@ -1,10 +1,27 @@
 @import 'variables';
 
+
+.github-PrPaneItem {
+
+  &-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+
 .github-PrPaneItem.github-PrPaneItem {
 
   .issueish-avatar-and-title {
     border-bottom: none;
     margin-bottom: 0;
+  }
+
+  .issueish-title {
+    display: inline;
+    line-height: 32px;
+    vertical-align: middle;
   }
 
   .issueish-badge-and-link {
@@ -13,14 +30,9 @@
     border-bottom: 1px solid @base-border-color;
   }
 
-  .issueish-badge,
-  .issueish-badge.badge {
-    align-self: center;
-  }
-
-  .refresh-button {
-    .icon {
-      margin-left: @component-padding;
+  .refresh-button .icon {
+    &:before {
+      margin-right: 0;
     }
   }
 
